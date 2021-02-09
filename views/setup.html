@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./_/fonts.css">
+    <link rel="stylesheet" href="./_/normalize.css">
+    <link rel="stylesheet" href="./_/style.css">
+</head>
+<body style="--font: 'MyPress-OpenSans', sans-serif;">
+    <div class="centerInstall">
+        <form enctype="multipart/form-data" action="./setup" class="setupForm" method="post">
+            <h1>Setup MyPress</h1>
+
+            <h3>Your Website :</h3>
+            <div class="grid-2">
+              <div class="input">
+                <label class="input__label" for="title">Title :</label>
+                <input required class="input__input" type="text" name="title" id="title" placeholder="MyPress Website!">
+              </div>
+              <div class="input">
+                <label class="input__label" for="url">Website Url :</label>
+                <input required class="input__input" type="url" name="url" id="url" placeholder="thomas.mypress.site">
+              </div>
+              <div class="input">
+                <label class="input__label" for="description">Description :</label>
+                <input required class="input__input" type="text" name="description" id="description" placeholder="hello world">
+              </div>
+              <div>
+                <label class="input__label" for="logo">Logo :</label>
+                <div class="logo">
+                  <label for="logo">
+                    Logo <img id="preview_logo" class="preview_img" />
+                  </label>
+                  <input accept="image/*" hidden type="file" name="logo" id="logo">
+                </div>
+              </div>
+              <div>
+                <label class="input__label" for="banner">Banner :</label>
+                <div class="banner">
+                  <label for="banner">
+                    banner <img id="preview_banner" class="preview_img" />
+                  </label>
+                  <input accept="image/*" hidden type="file" name="banner" id="banner">
+                </div>
+              </div>
+            </div>
+
+            <h3>Fonts :</h3>
+            <p>abcdefghijklmnopqrstuvwxyz</p>
+            <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+            <p>0123456789</p>
+            <div class="gridFit">
+              <input checked type="radio" value="MyPress-OpenSans" name="font" id="font-MyPress-OpenSans" class="new-checkboxList__checkbox"/>
+              <label for="font-MyPress-OpenSans">
+                <span class="customFont" style="--font: 'MyPress-OpenSans', sans-serif;">OpenSans</span>
+              </label>
+              <input type="radio" value="MyPress-Bitter" name="font" id="font-MyPress-Bitter" class="new-checkboxList__checkbox"/>
+              <label for="font-MyPress-Bitter">
+                <span class="customFont" style="--font: 'MyPress-Bitter', sans-serif;">Bitter</span>
+              </label>
+              <input type="radio" value="MyPress-Raleway" name="font" id="font-MyPress-Raleway" class="new-checkboxList__checkbox"/>
+              <label for="font-MyPress-Raleway">
+                <span class="customFont" style="--font: 'MyPress-Raleway', sans-serif;">Raleway</span>
+              </label>
+              <input type="radio" value="MyPress-Roboto" name="font" id="font-MyPress-Roboto" class="new-checkboxList__checkbox"/>
+              <label for="font-MyPress-Roboto">
+                <span class="customFont" style="--font: 'MyPress-Roboto', sans-serif;">Roboto</span>
+              </label>
+              <input type="radio" value="MyPress-HeptaSlab" name="font" id="font-MyPress-HeptaSlab" class="new-checkboxList__checkbox"/>
+              <label for="font-MyPress-HeptaSlab">
+                <span class="customFont" style="--font: 'MyPress-HeptaSlab', sans-serif;">HeptaSlab</span>
+              </label>
+            </div>
+
+            <h3>Your Account :</h3>
+
+            <div class="grid-2">
+              <div class="input">
+                <label class="input__label" for="title">Username :</label>
+                <input required class="input__input" type="text" name="username" id="username" placeholder="Elon Musk">
+              </div>
+              <div class="input">
+                <label class="input__label" for="url">Email :</label>
+                <input required class="input__input" type="email" name="email" id="email" placeholder="elon@musk.btc">
+              </div>
+              <div class="input">
+                <label class="input__label" for="password">Password :</label>
+                <input required class="input__input" type="password" name="password" id="password" placeholder="********">
+              </div>
+              <div>
+                <label class="input__label" for="avatar">Avatar :</label>
+                <div class="avatar">
+                  <label for="avatar">
+                    avatar <img id="preview_avatar" class="preview_img" />
+                  </label>
+                  <input accept="image/*" hidden type="file" name="avatar" id="avatar">
+                </div>
+              </div>
+              <div class="input">
+                <label class="input__label" for="udescription">User Description :</label>
+                <input required class="input__input" type="text" name="udescription" id="udescription" placeholder="hello world">
+              </div>
+            </div>
+
+            <button effect-shine type="submit">Create</button>
+            
+        </form>
+    </div>
+
+    <script>
+      document.querySelectorAll('[name="font"]').forEach(function(checkbox) { 
+        checkbox.addEventListener("change", function() {
+          document.body.style = "--font: '"+ checkbox.value +"', sans-serif;"
+        });
+      });
+
+      const preview_logo = document.getElementById("preview_logo")
+
+      const logo = document.getElementById('logo')
+      const fileReader = new FileReader();
+      fileReader.addEventListener("load", function () {
+        // convert image to base64 encoded string
+        preview_logo.setAttribute("src", this.result);
+      });
+
+      logo.addEventListener("change", function() {
+        if (logo.value) {
+          /*customSpace.innerHTML =
+          logo.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1] + "?";*/
+          
+          fileReader.readAsDataURL(logo.files[0]);
+        } else {
+          customSpace.innerHTML = "No File, Selected!?";
+        }
+      });
+
+      const preview_banner = document.getElementById("preview_banner")
+
+      const banner = document.getElementById('banner')
+      const fileReaderBanner = new FileReader();
+      fileReaderBanner.addEventListener("load", function () {
+        // convert image to base64 encoded string
+        preview_banner.setAttribute("src", this.result);
+      });
+
+      banner.addEventListener("change", function() {
+        if (banner.value) {
+          fileReaderBanner.readAsDataURL(banner.files[0]);
+        } else {
+          customSpace.innerHTML = "No File, Selected!?";
+        }
+      });
+
+      const preview_avatar = document.getElementById("preview_avatar")
+
+      const avatar = document.getElementById('avatar')
+      const fileReaderAvatar = new FileReader();
+      fileReaderAvatar.addEventListener("load", function () {
+        // convert image to base64 encoded string
+        preview_avatar.setAttribute("src", this.result);
+      });
+
+      avatar.addEventListener("change", function() {
+        if (avatar.value) {
+          fileReaderAvatar.readAsDataURL(avatar.files[0]);
+        } else {
+          customSpace.innerHTML = "No File, Selected!?";
+        }
+      });
+      
+      function isLoaded() {
+        document.querySelectorAll("[effect-shine]").forEach(function (element) {
+          element.addEventListener("mousemove", onMouseMove);
+          element.addEventListener("mouseout", onMouseOut);
+        });
+      }
+
+      function onMouseMove(event) {
+        event.target.style = `--x: ${event.layerX}px;--y: ${event.layerY}px;--size: 250px;`;
+      }
+
+      function onMouseOut(event) {
+        event.target.style = `--x: 0;--y: 0;--size: 0;`;
+      }
+
+      document.addEventListener("DOMContentLoaded", isLoaded);
+    </script>
+</body>
+</html>

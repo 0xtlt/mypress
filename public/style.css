@@ -1,0 +1,198 @@
+body {
+  font-family: var(--font);
+}
+
+form,
+input,
+label {
+  box-sizing: border-box;
+}
+
+.centerInstall {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.setupForm {
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%),
+    inset 0px -3px 0px rgb(58 65 111 / 50%);
+  background: white;
+  margin: auto;
+  padding: 30px;
+  width: 1024px;
+  max-width: calc(100% - 40px);
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.new-checkboxList__checkbox {
+  position: absolute;
+  left: -9999px;
+}
+.new-checkboxList__checkbox + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #bdc3c7;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%),
+    inset 0px -3px 0px rgb(58 65 111 / 50%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: 0.2s ease;
+}
+.new-checkboxList__checkbox:disabled + label {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.new-checkboxList__checkbox:checked + label {
+  background: #2ecc71;
+  box-shadow: inset 0px 3px 7px #208e4e;
+  transform: translateY(2px);
+}
+
+.customFont {
+  font-family: var(--font);
+}
+
+.gridFit {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 120px);
+  grid-gap: 15px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+
+.input__label {
+  display: block;
+  padding: 0 15px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.input__input {
+  border: none;
+  display: block;
+  padding: 15px 15px;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%),
+    inset 0px -3px 0px rgb(58 65 111 / 50%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.input__input:focus {
+  outline: none;
+  box-shadow: inset 0px 3px 7px #bdc3c7;
+  transform: translateY(2px);
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+.logo,
+.banner,
+.avatar {
+  aspect-ratio: 1 / 1;
+  border-style: dashed;
+  position: relative;
+}
+
+.logo label,
+.banner label,
+.avatar label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.logo img,
+.avatar img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+[effect-shine] {
+  color: white;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, #89e5ff 0%, #5468ff 100%);
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%),
+    inset 0px -3px 0px rgb(58 65 111 / 50%);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  min-width: 200px;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: 0;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  --x: 0;
+  --y: 0;
+  --shineColor: rgba(255, 255, 255, 0.2);
+  --size: 0;
+}
+
+[effect-shine]:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(
+    circle closest-side,
+    var(--shineColor),
+    transparent
+  );
+  transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)));
+  transition: height 0.2s ease;
+  will-change: width, height, transform;
+}
+
+[effect-shine]:hover {
+  outline: none;
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3c4fe0;
+  transform: translateY(-2px);
+}
+
+[effect-shine]:active {
+  outline: none;
+  box-shadow: inset 0px 3px 7px #3c4fe0;
+  transform: translateY(2px);
+}
+
+[effect-shine]:focus {
+  outline: none;
+}

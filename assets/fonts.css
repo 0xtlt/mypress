@@ -1,0 +1,109 @@
+/*Roboto*/
+@font-face {
+  font-family: "MyPress-Roboto";
+  src: url("{{URL}}/_/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: lighter;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-Roboto";
+  src: url("{{URL}}/_/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-Roboto";
+  src: url("{{URL}}/_/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+/*Raleway*/
+@font-face {
+  font-family: "MyPress-Raleway";
+  src: url("{{URL}}/_/fonts/Raleway/Raleway-Thin.ttf") format("truetype");
+  font-weight: lighter;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-Raleway";
+  src: url("{{URL}}/_/fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-Raleway";
+  src: url("{{URL}}/_/fonts/Raleway/Raleway-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+/*OpenSans*/
+@font-face {
+  font-family: "MyPress-OpenSans";
+  src: url("{{URL}}/_/fonts/OpenSans/OpenSans-Thin.ttf") format("truetype");
+  font-weight: lighter;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-OpenSans";
+  src: url("{{URL}}/_/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-OpenSans";
+  src: url("{{URL}}/_/fonts/OpenSans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+/*Bitter*/
+@font-face {
+  font-family: "MyPress-Bitter";
+  src: url("{{URL}}/_/fonts/Bitter/Bitter-Thin.ttf") format("truetype");
+  font-weight: lighter;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-Bitter";
+  src: url("{{URL}}/_/fonts/Bitter/Bitter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-Bitter";
+  src: url("{{URL}}/_/fonts/Bitter/Bitter-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
+
+/*HeptaSlab*/
+@font-face {
+  font-family: "MyPress-HeptaSlab";
+  src: url("{{URL}}/_/fonts/HeptaSlab/HeptaSlab-Thin.ttf") format("truetype");
+  font-weight: lighter;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-HeptaSlab";
+  src: url("{{URL}}/_/fonts/HeptaSlab/HeptaSlab-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyPress-HeptaSlab";
+  src: url("{{URL}}/_/fonts/HeptaSlab/HeptaSlab-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-display: swap;
+}
